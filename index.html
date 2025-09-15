@@ -86,21 +86,21 @@
   </style>
 </head>
 <body>
-  <!-- Menu Button -->
+  
   <button class="menu-btn" id="menuBtn">
     <div></div>
     <div></div>
     <div></div>
   </button>
 
-  <!-- Menu -->
+  
   <div class="menu" id="menu">
     <a href="https://discord.com/oauth2/authorize?client_id=1416276935561973904&permissions=0&integration_type=0&scope=bot" target="_blank">
       Add Bot
     </a>
   </div>
 
-  <!-- Logo + Text -->
+  
   <div class="container">
     <img src="logo.png" alt="Logo">
     <div class="text">himal - soon</div>
@@ -114,7 +114,7 @@
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     });
 
-    // Close menu when clicking outside
+    
     document.addEventListener("click", (e) => {
       if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
         menu.style.display = "none";
