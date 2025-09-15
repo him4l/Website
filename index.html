@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>himal - Coming Soon</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent; /* removes blue tap effect */
+    }
+
+    .menu-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      z-index: 1000;
+    }
+
+    .menu-btn div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      min-width: 140px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .menu a {
+      padding: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background: #222;
+    }
+
+    .container {
+      transform: translateY(-50px); /* moves content up a bit */
+      text-align: center;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu Button -->
+  <button class="menu-btn" id="menuBtn">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+
+  <!-- Menu -->
+  <div class="menu" id="menu">
+    <a href="https://discord.com/oauth2/authorize?client_id=1416276935561973904&permissions=0&integration_type=0&scope=bot" target="_blank">
+      Add Bot
+    </a>
+  </div>
+
+  <!-- Logo + Text -->
+  <div class="container">
+    <img src="logo.png" alt="Logo">
+    <div class="text">himal - soon</div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => {
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
